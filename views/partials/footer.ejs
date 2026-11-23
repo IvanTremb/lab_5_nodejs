@@ -1,0 +1,15 @@
+    </main>
+    <footer class="site-footer">
+        <div class="container">Ivan Trembaci · IA2302 · <%= new Date().getFullYear() %></div>
+    </footer>
+
+    <aside class="notifications" aria-live="polite">
+        <h3>Уведомления</h3>
+        <p id="notifications-empty" class="notifications-empty">Новых уведомлений нет</p>
+        <div id="notifications-list"></div>
+    </aside>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/notifications.js"></script>
+</body>
+</html>

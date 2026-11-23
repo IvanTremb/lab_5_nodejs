@@ -1,0 +1,421 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f3f5f8;
+    color: #253047;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-header {
+    padding: 22px 0;
+    background: #243b60;
+    color: white;
+}
+
+.site-header h1 {
+    margin: 0 0 14px;
+    font-size: 26px;
+}
+
+nav, .user-menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 14px 20px;
+}
+
+nav a, .user-menu a {
+    color: white;
+}
+
+.user-menu form {
+    margin: 0;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.role-badge {
+    padding: 2px 7px;
+    border-radius: 10px;
+    background: #cd8a11;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.link-button {
+    padding: 0;
+    background: none;
+    color: white;
+    text-decoration: underline;
+}
+
+main.container {
+    padding: 28px 0;
+    min-height: 65vh;
+}
+
+a {
+    color: #245ca4;
+}
+
+.page-heading, .actions, .filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.page-heading {
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+h2 {
+    margin-top: 0;
+    overflow-wrap: anywhere;
+}
+
+.page-heading h2 {
+    margin-bottom: 0;
+}
+
+.filters, .course-form, .course-details, .error-page, .empty-state {
+    padding: 24px;
+    background: white;
+    border: 1px solid #dce1e9;
+    border-radius: 8px;
+}
+
+.filters {
+    align-items: flex-end;
+}
+
+.filters .field:first-child {
+    flex: 1;
+    min-width: 200px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aab5c5;
+    border-radius: 4px;
+    font: inherit;
+    background: white;
+    color: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button, .button {
+    display: inline-block;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 4px;
+    background: #245ca4;
+    color: white;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover, .button:hover {
+    filter: brightness(0.9);
+}
+
+:focus-visible {
+    outline: 3px solid #cd8a11;
+    outline-offset: 3px;
+}
+
+.view {
+    background: #256b57;
+}
+
+.edit {
+    background: #f0cf7a;
+    color: #46320a;
+}
+
+.delete {
+    background: #b5333d;
+}
+
+.actions form {
+    margin: 0;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #dce1e9;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #dce1e9;
+    overflow-wrap: anywhere;
+}
+
+th {
+    background: #e7edf5;
+}
+
+td .actions {
+    min-width: 130px;
+    gap: 7px;
+}
+
+td .button, td button {
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.course-form {
+    max-width: 700px;
+}
+
+.course-form input, .course-form textarea {
+    margin-bottom: 18px;
+}
+
+.errors {
+    max-width: 700px;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    border: 1px solid #e0a4a8;
+    border-radius: 6px;
+    background: #fff0f1;
+    color: #8f2029;
+}
+
+.course-details {
+    margin-top: 18px;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 0 14px;
+    overflow-wrap: anywhere;
+}
+
+.description {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.error-page code {
+    overflow-wrap: anywhere;
+}
+
+.site-footer {
+    padding: 22px 0;
+    border-top: 1px solid #dce1e9;
+    color: #526078;
+}
+
+.course-details h3 {
+    margin-top: 24px;
+}
+
+.small-table {
+    min-width: 0;
+    max-width: 700px;
+    margin-bottom: 20px;
+    border: 1px solid #dce1e9;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-box {
+    flex: 1;
+    min-width: 200px;
+    padding: 18px;
+    background: white;
+    border: 1px solid #dce1e9;
+    border-radius: 8px;
+}
+
+.stat-box p {
+    margin: 0 0 6px;
+    color: #526078;
+}
+
+.stat-box strong {
+    display: block;
+    font-size: 26px;
+    overflow-wrap: anywhere;
+}
+
+.auth-form {
+    max-width: 450px;
+}
+
+.success {
+    max-width: 450px;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    border: 1px solid #9ccbb4;
+    border-radius: 6px;
+    background: #eefaf3;
+    color: #1f5c40;
+}
+
+.session-box {
+    max-width: 700px;
+    margin-top: 20px;
+    padding: 18px 24px;
+    background: #fdfbf3;
+    border: 1px dashed #cd8a11;
+    border-radius: 8px;
+}
+
+.session-box h3 {
+    margin-top: 0;
+}
+
+.session-box code, .session-box pre {
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.session-box pre {
+    padding: 12px;
+    background: #253047;
+    color: #e7edf5;
+    border-radius: 6px;
+}
+
+.notifications {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    width: 300px;
+    max-width: calc(100% - 32px);
+    padding: 12px 14px;
+    background: white;
+    border: 2px solid #243b60;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.notifications h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+
+.notifications-empty {
+    margin: 0;
+    color: #526078;
+    font-size: 14px;
+}
+
+.notification {
+    position: relative;
+    margin-top: 8px;
+    padding: 10px 32px 10px 12px;
+    background: #fff6dd;
+    border-left: 4px solid #cd8a11;
+    border-radius: 4px;
+    animation: show-notification 0.3s;
+}
+
+.notification p {
+    margin: 0 0 4px;
+    overflow-wrap: anywhere;
+}
+
+.notification p:first-of-type {
+    font-weight: bold;
+}
+
+.notification small {
+    color: #526078;
+}
+
+.notification-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    padding: 0 8px;
+    background: none;
+    color: #46320a;
+    font-size: 20px;
+}
+
+@keyframes show-notification {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.site-footer {
+    padding-bottom: 110px;
+}
+
+@media (max-width: 600px) {
+    .site-header h1 {
+        font-size: 21px;
+    }
+
+    .filters .field {
+        width: 100%;
+    }
+
+    .filters, .course-form, .course-details {
+        padding: 16px;
+    }
+}

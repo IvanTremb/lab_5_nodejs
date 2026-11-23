@@ -1,0 +1,28 @@
+<%- include('partials/header', { title: 'Профиль' }) %>
+
+<h2>Профиль пользователя</h2>
+
+<article class="course-details">
+    <dl>
+        <dt>Имя</dt>
+        <dd><%= user.name %></dd>
+        <dt>Email</dt>
+        <dd><%= user.email %></dd>
+        <dt>Роль</dt>
+        <dd><%= user.role %></dd>
+        <dt>Дата регистрации</dt>
+        <dd><%= user.createdAt.toLocaleString('ru-RU') %></dd>
+        <dt>Последний успешный вход</dt>
+        <dd><%= user.lastLogin ? user.lastLogin.toLocaleString('ru-RU') : '-' %></dd>
+    </dl>
+</article>
+
+<section class="session-box">
+    <h3>Данные сессии</h3>
+    <p>ID сессии: <code><%= sessionId %></code></p>
+    <p>Сессия действует до: <%= sessionExpires ? sessionExpires.toLocaleString('ru-RU') : '-' %></p>
+    <p>Содержимое <code>req.session.user</code>:</p>
+    <pre><%= JSON.stringify(sessionUser, null, 4) %></pre>
+</section>
+
+<%- include('partials/footer') %>

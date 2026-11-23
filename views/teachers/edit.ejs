@@ -1,0 +1,34 @@
+<%- include('../partials/header', { title: 'Редактирование преподавателя' }) %>
+
+<h2>Редактирование преподавателя</h2>
+<% if (errors.length > 0) { %>
+    <div class="errors">
+        <p>Проверьте введённые данные:</p>
+        <ul>
+            <% errors.forEach(error => { %>
+                <li><%= error %></li>
+            <% }); %>
+        </ul>
+    </div>
+<% } %>
+
+<form class="course-form" action="/teachers/<%= teacher.id %>/edit" method="POST" novalidate>
+    <label for="name">Имя</label>
+    <input id="name" name="name" value="<%= teacher.name %>" required>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" value="<%= teacher.email %>" required>
+
+    <label for="department">Кафедра</label>
+    <input id="department" name="department" value="<%= teacher.department %>" required>
+
+    <label for="academicDegree">Учёная степень</label>
+    <input id="academicDegree" name="academicDegree" value="<%= teacher.academicDegree %>" required>
+
+    <div class="actions">
+        <button type="submit">Сохранить изменения</button>
+        <a href="/teachers/<%= teacher.id %>">Отмена</a>
+    </div>
+</form>
+
+<%- include('../partials/footer') %>

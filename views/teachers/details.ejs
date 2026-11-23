@@ -1,0 +1,58 @@
+<%- include('../partials/header', { title: teacher.name }) %>
+
+<a href="/teachers">← К списку преподавателей</a>
+
+<% if (error) { %>
+    <div class="errors">
+        <p><%= error %></p>
+    </div>
+<% } %>
+
+<article class="course-details">
+    <h2><%= teacher.name %></h2>
+    <dl>
+        <dt>Email</dt>
+        <dd><%= teacher.email %></dd>
+        <dt>Кафедра</dt>
+        <dd><%= teacher.department %></dd>
+        <dt>Учёная степень</dt>
+        <dd><%= teacher.academicDegree %></dd>
+        <dt>Количество курсов</dt>
+        <dd><%= teacher.Courses.length %></dd>
+    </dl>
+
+    <h3>Курсы преподавателя</h3>
+    <% if (teacher.Courses.length === 0) { %>
+        <p>У этого преподавателя пока нет курсов</p>
+    <% } else { %>
+        <table class="small-table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Кредиты</th>
+                    <th>Семестр</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% teacher.Courses.forEach(course => { %>
+                    <tr>
+                        <td><a href="/courses/<%= course.id %>"><%= course.title %></a></td>
+                        <td><%= course.credits %></td>
+                        <td><%= course.semester %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } %>
+
+    <% if (isAdmin) { %>
+        <div class="actions">
+            <a class="button edit" href="/teachers/<%= teacher.id %>/edit">Редактировать</a>
+            <form action="/teachers/<%= teacher.id %>/delete" method="POST" onsubmit="return confirm('Вы действительно хотите удалить этого преподавателя?')">
+                <button class="delete" type="submit">Удалить</button>
+            </form>
+        </div>
+    <% } %>
+</article>
+
+<%- include('../partials/footer') %>

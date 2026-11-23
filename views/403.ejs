@@ -1,0 +1,10 @@
+<%- include('partials/header', { title: 'Ошибка 403' }) %>
+
+<section class="error-page">
+    <h2>403 Forbidden — Доступ запрещён</h2>
+    <p><%= message %></p>
+    <p>Это действие доступно только администратору.</p>
+    <a class="button" href="/courses">К списку курсов</a>
+</section>
+
+<%- include('partials/footer') %>

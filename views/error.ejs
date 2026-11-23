@@ -1,0 +1,24 @@
+<%- include('partials/header', { title: 'Ошибка ' + status }) %>
+
+<section class="error-page">
+    <% if (status === 400) { %>
+        <h2>400 — Некорректные данные</h2>
+    <% } else if (status === 401) { %>
+        <h2>401 — Вы не выполнили вход</h2>
+    <% } else if (status === 409) { %>
+        <h2>409 — Конфликт данных</h2>
+    <% } else if (status >= 500) { %>
+        <h2><%= status %> — Внутренняя ошибка сервера</h2>
+    <% } else { %>
+        <h2>Ошибка <%= status %></h2>
+    <% } %>
+    <p><%= message %></p>
+    <div class="actions">
+        <% if (status === 401) { %>
+            <a class="button" href="/login">Войти</a>
+        <% } %>
+        <a class="button" href="/courses">К списку курсов</a>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
